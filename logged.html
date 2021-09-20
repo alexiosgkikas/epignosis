@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Logged Page</title>
+  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' rel='stylesheet'>
+  <style>
+    body {
+	  display:flex; flex-direction:column; justify-content:center;
+	  min-height:100vh;
+      background: url('images/images.jfif') center;
+    }
+
+    .login-box {
+      margin: auto;
+	  width: 50%;
+	  text-align:center;
+	  background: url('images/woofx_logo.png') center;
+      box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19)
+    }
+
+    .login-snip {
+      width: 100%;
+      height: 100%;
+      position: static;
+      padding: 90px 70px 50px 70px;
+      background: rgba(0, 77, 77, .9)
+    }
+	
+    .login {
+      color:rgb(27, 230, 0);
+    }
+
+  </style>
+</head>
+
+<body onload="check()">
+
+        <div class="login-box">
+          <div class="login-snip">
+            <label id ='msg' class="login">You are logged</label>
+          </div>
+        </div>
+  <script type='text/javascript'
+    src='https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js'></script>
+
+<!-- function to redirect if there is no session code (if a user successfully logged , it would store the code ass session id) -->
+    <script >
+      function check(){
+	  var code = sessionStorage.getItem("code");
+	  document.getElementById("msg").innerHTML = 'Welcome back, '+code;
+		if(code == null){
+		window.location.replace("index.html");
+		}
+      }
+	 
+    </script>
+  </body>
+</html>
