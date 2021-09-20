@@ -1,4 +1,4 @@
 # epignosis
 
 
-![Alt Text](snip/recorded.gif)
+![](snip/recorded.gif)
